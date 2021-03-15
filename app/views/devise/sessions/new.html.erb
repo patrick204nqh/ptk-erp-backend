@@ -42,9 +42,11 @@
                                     </div>
                                 <% end %>
                             </div>
-                            <div class="card-footer text-center">
-                                <div class="small"><a href="<%= erp.new_user_registration_path %>">Need an account? Sign up!</a></div>
-                            </div>
+                            <% if !session[:current_view] == "backend" %>
+                                <div class="card-footer text-center">
+                                    <div class="small"><a href="<%= erp.new_user_registration_path %>">Need an account? Sign up!</a></div>
+                                </div>
+                            <% end %>
                         </div>
                     </div>
                 </div>

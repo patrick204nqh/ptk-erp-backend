@@ -1,5 +1,6 @@
 require 'devise'
 require 'pundit'
+# require 'jquery-rails'
 require "erp/backend/version"
 require "erp/backend/engine"
 

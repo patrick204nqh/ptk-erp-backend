@@ -8,6 +8,8 @@ module Erp
       yield resource if block_given?
 
       if successfully_sent?(resource)
+        # Custom here
+        respond_with({}, location: after_sending_reset_password_instructions_path_for(resource_name))
         render plain: '<h2><i class="fa fa-user" aria-hidden="true"></i> Lấy lại mật khẩu</h2><p>Một email đã được gửi tới bạn với hướng dẫn lấy lại mật khẩu. Vui lòng kiểm tra email.</p>'
       else
         respond_with(resource)

@@ -1,7 +1,7 @@
 module Erp
   module Backend
     class BackendController < Erp::ApplicationController
-      layout "erp/backend/index"
+      layout "erp/backend/index" # When 'url: https://.../backend/...' => accesst to backend
       before_action :set_view # Apply for login/logout layout
       before_action :authenticate_user! # Funtion of devise gem
 

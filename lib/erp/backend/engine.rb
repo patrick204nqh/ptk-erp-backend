@@ -1,6 +1,7 @@
 module Erp
   module Backend
     class Engine < ::Rails::Engine
+      # require 'jquery-rails'
       isolate_namespace Erp
 
       initializer :append_migrations do |app|
