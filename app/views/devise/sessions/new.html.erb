@@ -1,70 +1,66 @@
-<title>PATRICK204NQH - Admin</title>
-<div id="layoutAuthentication">
-    <div id="layoutAuthentication_content">
-        <main>
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-lg-5">
-                        <div class="card shadow-lg border-0 rounded-lg mt-5">
-                            <div class="card-header"><h3 class="text-center font-weight-light my-4">Login</h3></div>
-                            <div class="card-body">
-                                <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-                                    <div class="form-group">
-                                        <label class="small mb-1" for="inputEmailAddress">Email</label>
-                                        <input
-                                            class="form-control py-4"
-                                            id="inputEmailAddress"
-                                            type="email"
-                                            placeholder="Enter email address"
-                                            name="user[email]"
-                                        />
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="small mb-1" for="inputPassword">Password</label>
-                                        <input
-                                            class="form-control py-4"
-                                            id="inputPassword"
-                                            type="password"
-                                            placeholder="Enter password"
-                                            name="user[password]"
-                                        />
-                                    </div>
-                                    <div class="form-group">
-                                        <div class="custom-control custom-checkbox">
-                                            <input class="custom-control-input" id="rememberPasswordCheck" type="checkbox" name="user[remember_me]" />
-                                            <label class="custom-control-label" for="rememberPasswordCheck">Remember password</label>
-                                        </div>
-                                    </div>
-                                    <div class="form-group d-flex align-items-center justify-content-between mt-4 mb-0">
-                                        <%# TODO: update url for user invalid %>
-                                        <a class="small" href="<%= erp.edit_user_password_path %>">Forgot Password?</a>
-                                        <button class="btn btn-primary" type="submit" >Login</button>
-                                    </div>
-                                <% end %>
-                            </div>
-                            <% if !session[:current_view] == "backend" %>
-                                <div class="card-footer text-center">
-                                    <div class="small"><a href="<%= erp.new_user_registration_path %>">Need an account? Sign up!</a></div>
-                                </div>
-                            <% end %>
+<section class="ftco-section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-12 col-lg-10">
+                <div class="wrap d-md-flex">
+                    <div class="text-wrap p-4 p-lg-5 text-center d-flex align-items-center order-md-last">
+                        <div class="text w-100">
+                            <h2>Welcome to login</h2>
+                            <p>Don't have an account?</p>
+                            <a href="<%= erp.new_user_registration_path %>" class="btn btn-white btn-outline-white">Sign Up</a>
                         </div>
                     </div>
-                </div>
-            </div>
-        </main>
-    </div>
-    <div id="layoutAuthentication_footer">
-        <footer class="py-4 bg-light mt-auto">
-            <div class="container-fluid">
-                <div class="d-flex align-items-center justify-content-between small">
-                    <div class="text-muted">Copyright &copy; Your Website 2020</div>
-                    <div>
-                        <a href="#">Privacy Policy</a>
-                        &middot;
-                        <a href="#">Terms &amp; Conditions</a>
+                    <div class="login-wrap p-4 p-lg-5">
+                        <div class="d-flex">
+                            <div class="w-100">
+                                <h3 class="mb-4">Sign In</h3>
+                            </div>
+                            <div class="w-100">
+                                <p class="social-media d-flex justify-content-end">
+                                    <a href="#" class="social-icon d-flex align-items-center justify-content-center"><span class="fa fa-facebook"></span></a>
+                                    <a href="#" class="social-icon d-flex align-items-center justify-content-center"><span class="fa fa-twitter"></span></a>
+                                </p>
+                            </div>
+                        </div>
+                        <%= form_for(resource, as: resource_name, :html => { class: "signin-form" }, url: session_path(resource_name)) do |f| %>
+                            <div class="form-group mb-3">
+                                <label class="label" for="name">Username</label>
+                                <input
+                                    class="form-control"
+                                    type="email"
+                                    placeholder="Enter email address"
+                                    name="user[email]"
+                                    required
+                                >
+                            </div>
+                            <div class="form-group mb-3">
+                                <label class="label" for="password">Password</label>
+                                <input
+                                    class="form-control"
+                                    type="password"
+                                    placeholder="Enter password"
+                                    name="user[password]"
+                                    required
+                                >
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="form-control btn btn-primary submit px-3">Sign In</button>
+                            </div>
+                            <div class="form-group d-md-flex">
+                                <div class="w-50 text-left">
+                                    <label class="checkbox-wrap checkbox-primary mb-0">Remember Me
+                                        <input type="checkbox" name="user[remember_me]" checked>
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                                <div class="w-50 text-md-right">
+                                    <a href="#">Forgot Password</a>
+                                </div>
+                            </div>
+                        <% end %>
                     </div>
                 </div>
             </div>
-        </footer>
+        </div>
     </div>
-</div>
+</section>

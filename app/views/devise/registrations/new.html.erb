@@ -1,29 +1,74 @@
-<h2>Sign up</h2>
-
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+<section class="ftco-section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-12 col-lg-10">
+                <div class="wrap d-md-flex">
+                    <div class="text-wrap p-4 p-lg-5 text-center d-flex align-items-center order-md-last">
+                        <div class="text w-100">
+                            <h2>Welcome to Sign Up</h2>
+                            <p>You have already account?</p>
+                            <a href="<%= erp.new_user_registration_path %>" class="btn btn-white btn-outline-white">Login</a>
+                        </div>
+                    </div>
+                    <div class="login-wrap p-4 p-lg-5">
+                        <div class="d-flex">
+                            <div class="w-100">
+                                <h3 class="mb-4">Sign Up</h3>
+                            </div>
+                            <div class="w-100">
+                                <p class="social-media d-flex justify-content-end">
+                                    <a href="#" class="social-icon d-flex align-items-center justify-content-center"><span class="fa fa-facebook"></span></a>
+                                    <a href="#" class="social-icon d-flex align-items-center justify-content-center"><span class="fa fa-twitter"></span></a>
+                                </p>
+                            </div>
+                        </div>
+                        <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+                            <%= render "devise/shared/error_messages", resource: resource %>
+                            <div class="form-group mb-3">
+                                <input
+                                    class="form-control"
+                                    type="text"
+                                    placeholder="Enter username"
+                                    name="user[username]"
+                                    required
+                                >
+                            </div>
+                            <div class="form-group mb-3">
+                                <input
+                                    class="form-control"
+                                    type="email"
+                                    placeholder="Enter email address"
+                                    name="user[email]"
+                                    required
+                                >
+                            </div>
+                            <div class="form-group mb-3">
+                                <input
+                                    class="form-control"
+                                    type="password"
+                                    placeholder="Enter password"
+                                    name="user[password]"
+                                    autocomplete="new-password"
+                                    required
+                                >
+                            </div>
+                            <div class="form-group mb-3">
+                                <input
+                                    class="form-control"
+                                    type="password"
+                                    placeholder="Enter confirmation password"
+                                    name="user[password_confirmation]"
+                                    autocomplete="new-password"
+                                    required
+                                >
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="form-control btn btn-primary submit px-3">Sign Up</button>
+                            </div>
+                        <% end %>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

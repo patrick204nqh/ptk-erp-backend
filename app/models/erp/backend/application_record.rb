@@ -1,6 +1,6 @@
 module Erp
   module Backend
-    class ApplicationRecord < ActiveRecord::Base # As Erp::ApplicationRecord
+    class ApplicationRecord < ActiveRecord::Base
       self.abstract_class = true
     end
 

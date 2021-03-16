@@ -1,10 +1,9 @@
 module Erp
   module Backend
-    class DashboardController < Erp::Backend::BackendController
+    class ProfileController < Erp::Backend::BackendController
       before_action :backedn_authenticate
-      def index
+      def show
       end
-
     end
   end
 end

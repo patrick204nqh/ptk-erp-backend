@@ -7,6 +7,10 @@ module Erp
 
       rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
 
+      def backedn_authenticate
+        authorize [:erp, :backend, :backend], :backend_access? # From 'app/policies/erp/backend/backend_policy.rb' (parent of 'dashboard_policy.rb')
+      end
+
       private
         def set_view
           session[:current_view] = "backend"

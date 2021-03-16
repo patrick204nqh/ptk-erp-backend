@@ -5,9 +5,12 @@ module Erp
 
       # POST /resource
       def create
-        build_resource(sign_up_params)
-
-        resource.save
+        params = sign_up_params
+        params[:role_id] = Erp::UserRole.find_by(name: "#{Erp::UserRole::ROLE_AS_DEFAULT}").id # Default role for new user signup => just admin change role for users
+        build_resource(params)
+        if resource.save
+          Erp::UserProfile.create(user_id: resource.id) # Auto create profile for new user
+        end
         yield resource if block_given?
         if resource.persisted?
           if resource.active_for_authentication?
@@ -31,7 +34,7 @@ module Erp
       private
 
       def sign_up_params
-        params.require(:user).permit(:name, :email, :password, :password_confirmation)
+        params.require(:user).permit(:username, :email, :password, :password_confirmation, :role_id)
       end
 
       def account_update_params
@@ -43,9 +46,9 @@ module Erp
           return nil if request.xhr?
 
           if session[:current_view] == 'frontend'
-            "erp/frontend/index"
+            "erp/frontend/auth"
           else
-            "erp/backend/index"
+            "erp/backend/auth"
           end
         end
     end

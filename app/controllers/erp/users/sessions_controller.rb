@@ -14,9 +14,9 @@ module Erp
 				return nil if request.xhr?
 
 				if session[:current_view] == 'frontend'
-					"erp/frontend/index"
+					"erp/frontend/auth"
 				else
-					"erp/backend/index"
+					"erp/backend/auth"
 				end
 			end
 	end

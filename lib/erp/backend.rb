@@ -1,6 +1,6 @@
 require 'devise'
 require 'pundit'
-# require 'jquery-rails'
+require 'carrierwave' # require gem in scope Erp module
 require "erp/backend/version"
 require "erp/backend/engine"
 

@@ -10,5 +10,6 @@ Erp::Backend::Engine.routes.draw do
       }
   namespace :backend do
     get '/' => 'dashboard#index'
+    get '/profile' => 'profile#show'
   end
 end

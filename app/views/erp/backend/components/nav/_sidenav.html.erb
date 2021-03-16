@@ -10,12 +10,14 @@
     <div class="sidebar">
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-        <div class="image">
-          <img src="/backend/assets/img/patrick204nqh-user_v0.1.jpeg" class="img-circle elevation-2" alt="User Image">
-        </div>
-        <div class="info">
-          <a href="#" class="d-block"><%= current_user.name %></a>
-        </div>
+        <% if current_user.present? %>
+          <div class="image">
+            <img src="/backend/assets/img/patrick204nqh-user_v0.1.jpeg" class="img-circle elevation-2" alt="User Image">
+          </div>
+          <div class="info">
+              <a href="<%= erp.backend_profile_path %>" class="d-block"><%= current_user.username %></a>
+          </div>
+        <% end %>
       </div>
 
       <!-- SidebarSearch Form -->
