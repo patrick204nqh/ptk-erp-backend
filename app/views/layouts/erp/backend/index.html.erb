@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>PATRICK204NQH | Dashboard</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <%= csp_meta_tag %>
+  <%= csrf_meta_tags %>
+
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome Icons -->
+  <%= stylesheet_link_tag "/backend/ui_v2/plugins/fontawesome-free/css/all.min.css", media: "all" %>
+  <%# <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css"> %>
+  <!-- overlayScrollbars -->
+  <%= stylesheet_link_tag "/backend/ui_v2/plugins/overlayScrollbars/css/OverlayScrollbars.min.css", media: "all" %>
+  <%# <link rel="stylesheet" href="plugins/overlayScrollbars/css/OverlayScrollbars.min.css"> %>
+  <!-- Theme style -->
+  <%= stylesheet_link_tag "/backend/ui_v2/dist/css/adminlte.min.css", media: "all" %>
+  <%# <link rel="stylesheet" href="dist/css/adminlte.min.css"> %>
+  <%= javascript_pack_tag 'application' %> <%# To run method delete %>
+</head>
+
+<body class="hold-transition dark-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
+
+<div class="wrapper">
+
+  <!-- Preloader -->
+  <div class="preloader flex-column justify-content-center align-items-center">
+    <img class="animation__wobble" src="/backend/ui_v2/dist/img/AdminLTELogo.png" alt="AdminLTELogo" height="60" width="60">
+  </div>
+
+  <!-- Main Sidebar Container -->
+  <%= render 'erp/backend/components/nav/topnav' %>
+  <!-- /.main-sidebar-container -->
+  <!-- Navbar -->
+  <%= render 'erp/backend/components/nav/sidenav' %>
+  <!-- /.navbar -->
+
+  <!-- Content Wrapper. Contains page content -->
+  <%= yield %>
+  <!-- /.content-wrapper -->
+
+  <!-- Control Sidebar -->
+  <aside class="control-sidebar control-sidebar-dark">
+    <!-- Control sidebar content goes here -->
+  </aside>
+  <!-- /.control-sidebar -->
+
+  <%= render 'erp/backend/components/footer' %>
+</div>
+<!-- ./wrapper -->
+
+<!-- REQUIRED SCRIPTS -->
+<!-- jQuery -->
+<%= javascript_include_tag "/backend/ui_v2/plugins/jquery/jquery.min.js" %>
+<%# <script src="plugins/jquery/jquery.min.js"></script> %>
+<!-- Bootstrap -->
+<%= javascript_include_tag "/backend/ui_v2/plugins/bootstrap/js/bootstrap.bundle.min.js" %>
+<%# <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script> %>
+<!-- overlayScrollbars -->
+<%= javascript_include_tag "/backend/ui_v2/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js" %>
+<%# <script src="plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script> %>
+<!-- AdminLTE App -->
+<%= javascript_include_tag "/backend/ui_v2/dist/js/adminlte.js" %>
+<%# <script src="dist/js/adminlte.js"></script> %>
+
+<!-- PAGE PLUGINS -->
+<!-- jQuery Mapael -->
+<%= javascript_include_tag "/backend/ui_v2/plugins/jquery-mousewheel/jquery.mousewheel.js" %>
+<%# <script src="plugins/jquery-mousewheel/jquery.mousewheel.js"></script> %>
+<%= javascript_include_tag "/backend/ui_v2/plugins/raphael/raphael.min.js" %>
+<%# <script src="plugins/raphael/raphael.min.js"></script> %>
+<%= javascript_include_tag "/backend/ui_v2/plugins/jquery-mapael/jquery.mapael.min.jss" %>
+<%# <script src="plugins/jquery-mapael/jquery.mapael.min.js"></script> %>
+<%= javascript_include_tag "/backend/ui_v2/plugins/jquery-mapael/maps/usa_states.min.js" %>
+<%# <script src="plugins/jquery-mapael/maps/usa_states.min.js"></script> %>
+<!-- ChartJS -->
+<%= javascript_include_tag "/backend/ui_v2/plugins/chart.js/Chart.min.js" %>
+<%# <script src="plugins/chart.js/Chart.min.js"></script> %>
+<!-- Customize setting on sidebar -->
+<%= javascript_include_tag "/backend/ui_v2/dist/js/customize-sidebar.js" %>
+<%# <script src="dist/js/demo.js"></script> %>
+<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+<%= javascript_include_tag "/backend/ui_v2/dist/js/pages/dashboard2.js" %>
+<%# <script src="dist/js/pages/dashboard2.js"></script> %>
+</body>
+</html>
