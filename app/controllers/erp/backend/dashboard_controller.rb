@@ -1,7 +1,7 @@
 module Erp
   module Backend
-    class DashboardController < Erp::Backend::BackendController
-      before_action :backend_authenticate
+    class DashboardController < Erp::Backend::BackendController # Extend all mothods from backend controller
+
       def index
       end
 

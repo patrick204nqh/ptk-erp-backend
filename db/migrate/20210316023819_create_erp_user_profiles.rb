@@ -6,7 +6,7 @@ class CreateErpUserProfiles < ActiveRecord::Migration[6.1]
       t.string :phone
       t.string :address
       t.date :birthday
-      t.text :description
+      t.text :descriptions
       t.string :avatar
 
       t.timestamps

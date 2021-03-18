@@ -11,14 +11,16 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome Icons -->
   <%= stylesheet_link_tag "/backend/plugins/fontawesome-free/css/all.min.css", media: "all" %>
-  <%# <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css"> %>
+  <!-- Ekko Lightbox -->
+  <%= stylesheet_link_tag "/backend/plugins/ekko-lightbox/ekko-lightbox.css" %>
+  <%# <link rel="stylesheet" href="../plugins/ekko-lightbox/ekko-lightbox.css"> %>
   <!-- overlayScrollbars -->
   <%= stylesheet_link_tag "/backend/plugins/overlayScrollbars/css/OverlayScrollbars.min.css", media: "all" %>
-  <%# <link rel="stylesheet" href="plugins/overlayScrollbars/css/OverlayScrollbars.min.css"> %>
   <!-- Theme style -->
   <%= stylesheet_link_tag "/backend/dist/css/adminlte.min.css", media: "all" %>
-  <%# <link rel="stylesheet" href="dist/css/adminlte.min.css"> %>
   <%= javascript_pack_tag 'application' %> <%# To run method delete %>
+  <%# My custom %>
+  <%= stylesheet_link_tag "/backend/assets/css/style.css", media: "all" %>
 </head>
 
 <body class="hold-transition dark-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
@@ -58,8 +60,12 @@
 <%= javascript_include_tag "/backend/plugins/bootstrap/js/bootstrap.bundle.min.js" %>
 <!-- overlayScrollbars -->
 <%= javascript_include_tag "/backend/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js" %>
+<!-- Ekko Lightbox -->
+<%= javascript_include_tag "/backend/plugins/ekko-lightbox/ekko-lightbox.min.js" %>
 <!-- AdminLTE App -->
 <%= javascript_include_tag "/backend/dist/js/adminlte.js" %>
+<!-- Filterizr-->
+<%= javascript_include_tag "/backend/plugins/filterizr/jquery.filterizr.min.js" %>
 
 <!-- PAGE PLUGINS -->
 <!-- jQuery Mapael -->
@@ -73,5 +79,24 @@
 <%= javascript_include_tag "/backend/dist/js/customize-sidebar.js" %>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <%= javascript_include_tag "/backend/dist/js/pages/dashboard2.js" %>
+<%# My custom %>
+<%= javascript_include_tag "/backend/assets/js/custom.js" %>
+<!-- Page specific script -->
+<script>
+  $(function () {
+    $(document).on('click', '[data-toggle="lightbox"]', function(event) {
+      event.preventDefault();
+      $(this).ekkoLightbox({
+        alwaysShowClose: true
+      });
+    });
+
+    $('.filter-container').filterizr({gutterPixels: 3});
+    $('.btn[data-filter]').on('click', function() {
+      $('.btn[data-filter]').removeClass('active');
+      $(this).addClass('active');
+    });
+  })
+</script>
 </body>
 </html>

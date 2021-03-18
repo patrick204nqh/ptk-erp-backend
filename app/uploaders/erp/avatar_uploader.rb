@@ -19,8 +19,8 @@ module Erp
     # def default_url(*args)
     #   # For Rails 3.1+ asset pipeline compatibility:
     #   # ActionController::Base.helpers.asset_path("fallback/" + [version_name, "default.png"].compact.join('_'))
-    #
-    #   "/images/fallback/" + [version_name, "default.png"].compact.join('_')
+
+    #   "/backend/assets/img/default/default-user.png"
     # end
 
     # Process files as they are uploaded:

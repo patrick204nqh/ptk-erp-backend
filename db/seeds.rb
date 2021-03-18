@@ -33,7 +33,7 @@ Erp::UserProfile.create(
   last_name: "nguyen",
   phone: "0985156089",
   address: "bao loc",
-  description: "dcf afdslfjl fsdfsdf dfasd",
+  descriptions: "dcf afdslfjl fsdfsdf dfasd",
   birthday: Time.zone.now
 )
 

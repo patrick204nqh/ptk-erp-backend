@@ -18,12 +18,5 @@ module Erp
     has_many :groups, through: :rooms
     has_one :profile, class_name: "Erp::UserProfile", :foreign_key => 'user_id', :dependent => :destroy # Detroy async when destroy user
 
-    # Actions before create
-    # before_create :update_role_default
-
-    # private
-    #   def update_role_default
-    #     self.role_id = Erp::UserRole.find_by(name: "#{Erp::UserRole::ROLE_AS_DEFAULT}").id
-    #   end
   end
 end

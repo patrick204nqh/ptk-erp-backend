@@ -10,6 +10,12 @@ Erp::Backend::Engine.routes.draw do
       }
   namespace :backend do
     get '/' => 'dashboard#index'
-    get '/profile' => 'profile#show'
+    resources :accounts do
+      collection do
+        get 'profile'
+        get 'gallery'
+        post 'update_profile'
+      end
+    end
   end
 end
